@@ -7,8 +7,7 @@ title = st.text_input("Заглавие")
 author = st.text_input("Автор")
 price = st.text_input("Цена", min_value=0.0)
 if st.button("Добави книга"):
-
-book = {
+  book = {
   "title": title,
   "author": author,
   "price": price
@@ -18,23 +17,23 @@ st.session_state.books.append(book)
 st.success("Книгата е добавена!")
 if st.button("Покажи всички книги.")
 else:
-for book in st.session_state.books:
+  for book in st.session_state.books:
 st.write("Заглавие:". book["title"])
 st.write("Автор:". book["author"])
 st.write("Цена:". book["price"])
 st.write("-------------------")
 st.header("Търсене по автор")
 search_author = st.text_input("Въведи име на автор")
-if st.button("Търси по автор")
-found = False
+if st.button("Търси по автор"):
+  found = False
 for book in st.session_state.books:
 if book["author"] == search_author:
-found = True
+  found = True
 
 if found == False:
-st.write("Няма намерени книги от този автор")
-st.header("Търсене по заглавие")
-search_title = st.text_input("Въведи име на автор")
+  st.write("Няма намерени книги от този автор")
+  st.header("Търсене по заглавие")
+  search_title = st.text_input("Въведи име на автор")
 if st.button("Търси по заглавие")
 found = False
 for book in st.session_state.books:
