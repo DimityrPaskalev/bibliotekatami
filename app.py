@@ -15,7 +15,7 @@ if st.button("Добави книга"):
 
 st.session_state.books.append(book)
 st.success("Книгата е добавена!")
-if st.button("Покажи всички книги.")
+if st.button("Покажи всички книги."):
 else:
   for book in st.session_state.books:
 st.write("Заглавие:". book["title"])
